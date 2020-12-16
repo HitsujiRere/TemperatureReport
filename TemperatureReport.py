@@ -93,14 +93,13 @@ def report(userid: str, password: str):
         print(driver.current_url)
 
         # 終了する
-        driver.find_element_by_id('GradeBtn').click()
-        print(driver.current_url)
-        driver.find_element_by_name('grade').click()
-        print(driver.current_url)
+        # driver.find_element_by_id('GradeBtn').click()
+        # print(driver.current_url)
+        # driver.find_element_by_name('grade').click()
+        # print(driver.current_url)
+        driver.quit()
 
     except Exception as e:
-        print(e)
         return False, e
 
-    driver.quit()
     return True

@@ -10,7 +10,7 @@ sys.path.append('/home/pi/.local/lib/python3.5/site-packages/')
 
 
 def halfwidth_to_fullwidth(half_text: str):
-    '''
+    """
     半角数字を全角数字に置換する
 
     Parameters
@@ -22,7 +22,7 @@ def halfwidth_to_fullwidth(half_text: str):
     -------
     full_text : str
         置換された文字列
-    '''
+    """
 
     halfwidths = '0123456789'
     fullwidths = '０１２３４５６７８９'
@@ -35,7 +35,7 @@ def halfwidth_to_fullwidth(half_text: str):
 
 
 def report(userid: str, password: str):
-    '''
+    """
     検温報告を行う
 
     Parameters
@@ -51,16 +51,17 @@ def report(userid: str, password: str):
         成功したかどうか
     e : Exception
         エラー内容（失敗時）
-    '''
+    """
 
     try:
         driver = webdriver.Chrome(
-            executable_path="/usr/lib/chromium-browser/chromedriver")
+            executable_path='/usr/lib/chromium-browser/chromedriver'
+        )
 
         driver.implicitly_wait(3)
 
         # ログインページを開く
-        driver.get(os.environ.get('LOGIN_URL'))
+        driver.get('https://wc.cen.ishikawa-nct.ac.jp/webclass/login.php')
         print(driver.current_url)
 
         # ログインする
@@ -70,7 +71,9 @@ def report(userid: str, password: str):
         print(driver.current_url)
 
         # 検温報告ページ一覧を開く
-        driver.get(os.environ.get('REPORTS_URL'))
+        driver.get(
+            'https://wc.cen.ishikawa-nct.ac.jp/webclass/course.php/a45f0a951d5cb9dcd7b29c9e79ea3908/'
+        )
         print(driver.current_url)
 
         # 今日の検温報告ページに移動する

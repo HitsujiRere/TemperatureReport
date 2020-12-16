@@ -97,9 +97,10 @@ def report(userid: str, password: str):
         # print(driver.current_url)
         # driver.find_element_by_name('grade').click()
         # print(driver.current_url)
-        driver.quit()
 
     except Exception as e:
+        driver.quit()
         return False, e
 
-    return True
+    driver.quit()
+    return True, None

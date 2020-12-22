@@ -11,6 +11,8 @@ WindowsやMacでも，調べたりすればできると思います．
 .envファイルを開き，USER_ID，PASSWORD，MAIL_TO，MAIL_ADDRESS，MAIL_PASSWORDを入力します．
 そして，main.pyを実行すると，検温報告が行われる思います．
 
+MAIL_ADDRESS（パスワード : MAIL_PASSWORD）からMAIL_TOへ，検温報告を失敗した時にその旨を送信します．
+
 > MAIL_ADDRESSがGoogleアカウントの場合，「安全性の低いアプリのアクセス」を許可する必要があります．
 Googleアカウント「セキュリティ」の下部にて設定できます．
 https://myaccount.google.com/security
